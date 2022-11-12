@@ -1,0 +1,37 @@
+<Config>
+    <HostConfig>
+        <ESX4xUpdateUrl>https://hostupdate.vmware.com/software/VUM/PRODUCTION/main/vmw-depot-index.xml</ESX4xUpdateUrl>
+        <ESXThirdPartyUpdateUrl id="0000">https://vmwaredepot.dell.com/index.xml</ESXThirdPartyUpdateUrl>
+    </HostConfig>
+    <contentSettings>
+        <hostExclude id="0000">embeddedEsx-6.0.0-INTL</hostExclude>
+        <hostInclude id="0002">embeddedEsx-6.5.0-INTL</hostInclude>
+        <hostInclude id="0003">embeddedEsx-6.6.1-INTL</hostInclude>
+        <hostInclude id="0004">embeddedEsx-6.6.2-INTL</hostInclude>
+        <hostInclude id="0005">embeddedEsx-6.6.3-INTL</hostInclude>
+        <hostInclude id="0006">embeddedEsx-6.7.0-INTL</hostInclude>
+        <hostUpdateEnabled>true</hostUpdateEnabled>
+    </contentSettings>
+    <log>
+        <components>
+        <lib.vdb.vdb>
+            <level>info</level>
+        </lib.vdb.vdb>
+        <lib.vdb.vdbStatement>
+            <level>info</level>
+        </lib.vdb.vdbStatement>
+        </components>
+        <level>verbose</level>
+        <memoryLevel>error</memoryLevel>
+        <name>vmware-downloadService</name>
+        <outputToConsole>false</outputToConsole>
+    </log>
+    <patchStore>/var/lib/vmware-umds/6.7</patchStore>
+    <proxySettings>
+        <password/>
+        <proxyPort>0</proxyPort>
+        <proxyServer/>
+        <useProxyServer>0</useProxyServer>
+        <username/>
+    </proxySettings>
+</Config>

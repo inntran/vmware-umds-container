@@ -1,0 +1,14 @@
+FROM docker.io/library/photon:4.0
+ARG umds_tarball
+ARG umds_dir=/tmp/umds/
+ARG umds_download_cfg
+ADD --chown=root:root $umds_tarball $umds_dir
+ADD --chown=root:root $umds_download_cfg /usr/local/bin/downloadConfig.xml
+WORKDIR $umds_dir/vmware-umds-distrib
+RUN cp -n lib/* /usr/local/lib/ && \
+cp -n bin/* /usr/local/bin/ && \
+mkdir -p /var/lib/vmware-umds /var/log/vmware/vmware-updatemgr/umds && \
+yum install -y Linux-PAM && \
+rm -rf /tmp/umds /var/cache/tdnf
+WORKDIR /root
+CMD ["/usr/local/bin/vmware-umds", "-D"]
